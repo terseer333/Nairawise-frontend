@@ -56,3 +56,36 @@ return await res.json();
 };
 
 export const queryClient = new QueryClient({ defaultOptions: { queries: { queryFn: getQueryFn({ on401: "throw" }), refetchInterval: false, refetchOnWindowFocus: false, staleTime: Infinity, retry: false, }, mutations: { retry: false, }, }, });
+// script.js - Frontend logic for NairaWise
+
+window.addEventListener('DOMContentLoaded', () => {
+  console.log("NairaWise frontend loaded.");
+  // Example: update a placeholder element with id="status"
+  const statusEl = document.getElementById('status');
+  if (statusEl) {
+    statusEl.textContent = 'Frontend is loaded. Ready to use!';
+  }
+
+  // Example: fetch data from backend API (uncomment and adjust URL as needed)
+  // fetch('http://localhost:3000/api/example')
+  //   .then(response => response.json())
+  //   .then(data => console.log(data))
+  //   .catch(err => console.error('API error:', err));
+});
+
+# NairaWise Frontend
+
+This is the frontend for the **NairaWise** budget tracker app. It is a simple static HTML/JavaScript application. 
+
+## Usage
+
+- Clone or download the repository.
+- Ensure `index.html` and `script.js` are in the same folder.
+- Open `index.html` in your web browser to launch the app.
+- (Optional) For local development, you can run a static server, e.g., with `npx serve` or `python -m http.server 8000`.
+- The browser console will log “NairaWise frontend loaded.” once the page initializes.
+
+## Notes
+
+- Modify `script.js` to add interactivity or connect to the backend API.
+- Adjust any API URLs in `script.js` to match your backend server location.
